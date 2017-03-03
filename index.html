@@ -51,7 +51,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="#portfolio">Blog Posts</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
@@ -73,7 +73,7 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/myprofile.jpg" alt="">
                     <div class="intro-text">
-                        <span class="name">Hello Zalım World.. :)</span>
+                        <span class="name">Hello Zalım World !</span>
                         <hr class="star-light">
                     </div>
                 </div>
@@ -81,16 +81,19 @@
         </div>
     </header>
 
-    <!-- Portfolio Grid Section -->
+    <!-- Blog posts Grid Section -->
     <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
+                    <h2>Blog Posts</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
+              <div class="baslik">
+                <h5>Cross-site Scripting(XSS)</h5>
+              </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -98,8 +101,11 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/cross-site scripting.jpg" class="img-responsive" alt="">
                     </a>
+                </div>
+                <div class="baslik2">
+                  <h5>SQL injection</h5>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
@@ -287,9 +293,41 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Cross-site Scripting(XSS)</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <img src="img/portfolio/cross-site scripting.jpg" class="img-responsive img-centered" alt="">
+                            <h4>Cross site scripting (XSS), NEDİR</h4>
+                              <p>Web güvenlik açığıdır. HTML kodlarının arasına istemci tabanlı kod gömülmesi yoluyla kullanıcının tarayıcısında istenen istemci tabanlı kodun çalıştırılabilmesi olarak tanımlanır.
+                                JavaScript kodlarınında çalıştırmasına izin verirlir.</p>
+                                <br>
+                                <h4>NEYDEN KAYNAKLANIR</h4>
+                                <p>Temel sebep dışarıdan kullanıcının girebildiği parametrelerin filtrelenmemesinden kaynaklanır. Sql injection da bu sebeple ortaya çıkmaktadır. Ama bu saldırı türünde sayfada "html" veya "javascript" kodları çalıştırmak mümkündür.
+
+Açığa sebebiyet verecek karakterler webmasterın sayfayı kodlarken ne şekilde kodladığına göre değişir ancak en yaygınları <br>( ", ' , < , > ,/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i) karakterleridir.</p>
+                              <br>
+                              <h4>NE AMAÇ İÇİN KULLANILIR ,    XSS İLE NELER YAPABİLİRİM</h4>
+                              <p>Sitenizin işlediği verilerin hassaslığına bağlıdır. Bilgisayar korsanlarının XSS'den istifade ederek yaptıkları bazı şeyler:</p><br>
+                              <p>Solucanları sosyal medya sitelerine yaymak. Facebook, Twitter ve YouTube'un hepsine bu şekilde başarıyla saldırıldımıştır.</p><br>
+                              <p>Oturum kaçırma. Kötü amaçlı JavaScript, oturum kimliğini bilgisayar korsanının kontrolü altındaki uzak bir siteye gönderebilir ve bilgisayar korsanının devam eden bir oturumu kaçırarak bu kullanıcının kimliğine bürünmesine izin verebilir.</p><br>
+                              <p>Kimlik Hırsızı. Kullanıcı, kredi kartı numarası gibi gizli bilgileri alınır zorunlu bir web sitesinde girerse, bu bilgiler kötü niyetli JavaScript kullanılarak çalınabilir.</p><br>
+                              <p>XSS çoğunlukla tarayıcıda saklanan bilgiler olan cookielere saldırı amacı ile kullanılmaktadır.</p><br>
+                              <p><h6>Cookie (Çerez):</h6> Bir web sitesinin, oturum kimliği (Session ID), kimlik (ID), şifre (Password) gibi bazı bilgileri son kullanıcının bilgisayarında tuttuğu genel bilgi dosyasıdır.</p>
+                              <br>
+                              <h4>XSS NERELERDE BULUNUR</h4>
+                              <p>news.php,index.php,p.php gibi php dosyalarında  bulunur</p>
+                              <p>ilk id'lerde aranır</p>
+                              <p>Bilinen bir gerçek var o da Xss popüler olarak bir sayfa içerisinde form’larda aranır Mesela bir search kutusunda</p>
+                              <p>kayıt formlarında </p>
+                              <p>Ziyaretçi defterinde (stored xss)</p>
+                              <p>Yorum textlerinde </p><br>
+                              <h4>KAÇ TİP XSS TÜRÜ VARDIR</h4><br>
+                              <p><h5>Stored XSS Saldırısı:</h5>Stored XSS saldırısı oldukça tehlikeli saldırı yöntemlerinden biridir. Daha çok forumlar, yorum alanları ve ziyaretçi defteri gibi alanlarda kullanılır. Bu alanlara gönderilen XSS kodları veritabanına kaydedilir. Sayfaya giren her kullanıcı için sayfayı görüntülerken XSS saldırısına maruz kalır.</p>
+                              <p><h5>Reflected XSS Saldırısı:</h5> XSS saldırı URL alanlarına ve ya veri giriş alanlarına yapılır. Yapılan bu saldırı sadece XSS saldırısı yapan kullanıcı tarafından görülür. Ziyaretçiler bu saldırıyı göremezler. Bu yüzden URL alanında çalışan Reflected XSS saldırılarında, saldırgan URL adresini e-mail gibi çeşitli iletişim kanalları ile göndererek kurban avına çıkar.</p>
+                              <p><h5>DOM XSS Saldırısı:</h5> DOM XSS saldırısı en tehlikeli XSS saldırı türüdür. JavaScript kodlarının zararlı bir şekilde kullanılması ile yapılır. Bu saldırı türünde kullanılan DOM nesneleri ile hedef web sitesinin index’i değiştirilebilir, sayfanın kodları ile oynanabilir, virüs, trojan gibi zararlı kodlar sayfaya entegre edilebilir.</p>
+                              <h5>ÖRNEK</h5><p></p>
+                              <br>
+                              <h4>XSS AÇIĞINI NASIL KAPATABİLİRİM</h4>
+                              <br><p>Saklanan XSS saldırılarına karşı koruma sağlamak için, veri deposundan gelen dinamik içeriğin bir sayfaya JavaScript eklenmesi için kullanılamadığından emin olun.</p>
 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
