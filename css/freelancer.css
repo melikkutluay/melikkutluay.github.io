@@ -72,6 +72,12 @@ header {
   background: #18BC9C;
   color: white;
 }
+header.intro-text{
+  border:2px solid #999;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+   border-radius:8px;
+}
 header .container {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -502,4 +508,9 @@ fieldset[disabled] .btn-success.active {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
+}
+.highlight{
+  background-color: black;
+  border-radius: 3px,3px,3px,3px;
+  padding: 9.5px;
 }
