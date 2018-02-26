@@ -16,6 +16,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
+    <link rel="stylesheet" href="/css/freelancer.css">
     <link href="css/freelancer.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -48,9 +49,9 @@
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
-                    <li class="page-scroll">
+                    <!--<li class="page-scroll">
                         <a href="#contact">Contact</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -82,35 +83,38 @@
                     <hr class="star-primary">
                 </div>
             </div>
-              <div class="blogPost">
-                <h5>Cross-site Scripting(XSS)</h5>
+            <div class="group">
+
+          <div class="blogPost">
             <div class="row">
               <div class="baslik">
-              </div>
+                <h5><a href="https://melikkutluay.me/cross-site-scripting-xss">Cross-site Scripting(XSS)</a></h5>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal1" class="portfolio-link" data-link="bile" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cross-site scripting.jpg" class="img-responsive" alt="">
+                      <img src="img/portfolio/cross-site scripting.jpg" class="img-responsive" alt="">
                         <meta property="og:url" content="https://melikkutluay.me/cross-site-scripting-xss/">
                         <link rel="canonical" href="https://melikkutluay.me/cross-site-scripting-xss/">
-
                     </a>
                 </div>
-                <h5>SQL INJECTION</h5>
+                </div>
+
+                <h5><a href="https://melikkutluay.me/sql-injection">SQL INJECTION</a></h5>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <a href="https://melikkutluay.me/sql-injection" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
                         <img src="img/blog içi foto/sql.jpg" class="img-responsive">
-                    </a>
+                          </a>
                 </div>
+                <h5><a href="https://melikkutluay.me/freelancer-kimdir">FREELANCER KİMDİR?</a></h5>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -118,7 +122,9 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                        <div class="resimler">
+                          <img src="img/blog içi foto/freelancerkapak.jpg" class="img-responsive" alt="">
+                        </div>
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -153,6 +159,7 @@
                 </div>
             </div>
             </div>
+            </div>
         </div>
     </section>
 
@@ -179,7 +186,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <!--<section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -191,7 +198,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                <!--    <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
@@ -225,7 +232,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- Footer -->
     <footer class="text-center">
@@ -233,8 +240,7 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-
+                        <h3></h3>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
@@ -252,7 +258,7 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
+                        <h3></h3>
                     </div>
                 </div>
             </div>
@@ -290,7 +296,6 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-
                             <h2>Cross-site Scripting(XSS)</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cross-site scripting.jpg" class="img-responsive img-centered" alt="">
@@ -368,7 +373,8 @@
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <a name="1">
+    <div class="portfolio-modal modal fade" id="https://melikkutluay.me/sql-injection" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -376,21 +382,26 @@
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+
+                            <h2>Sql injection</h2>
                             <hr class="star-primary">
                             <img src="img/blog içi foto/sql.jpg" class="img-responsive">
-
+                            <p>bir şeyler yaz</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
+
+                          </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+    </a>
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -403,10 +414,32 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>-Freelancer-</h2>
                             <hr class="star-primary">
-                            
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                            <img src="img/portfolio/freelancer1.jpg" class="img-responsive img-centered" alt="">
+                            <div class="metin">
+                              <p>İlk önce  bu işle uğraşan insanların neler yaptığından,bu işin ne olduğundan ve bu işlerin nasıl yürüdüğünden başlayalım freelancer developer birilerine veya bir şirkete bağlı olmadan kendi imkanları dahilinde küçük küçük işleri çevirmeye çalışan kod yazıcılara freelancer developer diyebiliriz,yani freelancer developerlar ekmeğini taşdan değil webden çıkarırlar.Bu işde de kod yazıcıların en büyük destekçisi internet oluyor.İnternet bu konuda  bir çok serbest fırsat piyasası,genişletilmiş mevcut pazar ve hizmet sektörünü yazılımcıların önüne sunuluyor.Böyle oluncada kapı kapı gezip iş aramak durumunda kalmıyorsun ve patronun  işi bitirmek için sıkıştırma gibi durumu da olmuyor.Kendi deneyim bilgi birikimine göre bir işi tercih edebilme imkanı oluyor bir yere bağlı kalmadığı için ilgi duyduğu,merak etiği  başka alanları başka konuları araştırma imkanı oluyor.</p>
+                              <br>
+                              <p>E tabi şimdi kalkıpta sigortam olsun her ay bankaya sabit maaşım yatsın diyemiyorsunuz.Freelance developer bir yere bağlı olmadığı için zamanını kiralama gibi bir durum söz konusu olmadığından yapılan iş ile para kazandığı için zamanını çalışma saatleri kendi elinde olmuş oluyor ve sabit bir yerde çalışan kişilere göre  çok daha özgür çalışma ortamlarına sahip oluyorlar.</p>
+                              <img src="img/portfolio/freelancer4.jpeg" alt="">
+                              <br><p>Çok güzel  projeler de çalışıp normal bir developerin bir ayda kazandığı parayı bir haftada da kazanılabilir.Frelance iletişim kanalları doğru bir şekilde kullanıldığı takdirde çok fazla avantajı vardır.Yazının ileri ki kısmında bu iletişim kanallarından bazılarından da bahsedicez.</p><br>
+                              <p>Frelancer developer olmanın çok fazla avantajının yanında zorlukları elbette var.Bunlardan bahsedelim azcıkta freelancer kişi işin herşeyi ile kendisi ilgileniyor en önemli sıkıntısı ise iş sürekliliğinin olmaması elinde iş olmadığı zamanlar işi kendisi araması ve pazarlık gibi konularıda kendisinin halletmesi gerekiyor.Tabi ülkemizde ki freelance işler yurtdışındaki gibi işlemiyor insanlar bu konuda çeşitli platformlarla hem proje sahibinin hem de developerın haklarını koruyup karşılıklı güvenlerini sağlamayı başarmışlar.Ülkemizde daha çok iş bulma sıkıntısı yaşayan insanların veya okurken üç beş de para girsin diye tercih edimekte,kısaca tercihlere bağlı olarak, freelance çalışma bir kesim için ideal bir yaşam tarzı iken büyük başka bir kesim için, mecburen yapılan,ya da ilaveten yapmak zorunda kaldığı geçim yoludur.
+                              </p>
+                              <br><p><img src="img/portfolio/uyari.jpg" width="100px"  height="70px" alt="">Önemli bir uyarı freelance çalışma, vergisiz çalışmak anlamına gelmiyor.</p>
+                              <p>Kayıt dışı kazanç kapısı olarak görünüyor ama vergi kaydı ile freelancer olunabileceği gibi, yıllık belli limitlerin altındaki kazançlar için, resmi olarak vergiden muaf olarak da çalışılabilmektedir,ancak 2012 yılının değerlerine göre yıllık  50.000 tl'nin üzerinde bir gelir elde ediyor ise vergi dairesine kayıt yaptırmak zorunludur ve vergilerini düzenli olarak vermek zorundadır.Altında gelir elde ediliyorsa kişi vergi vermeden vergi dairesine kayıt yaptırmadan, resmi olarak freelancer sıfatında çalışabilir.Yaptığı işe karşılık makbuz imzalayabilir.Burada önemli olan nokta, freelance çalışan kişi yaptığı işin vergisini vermez fakat, işveren o vergiyi ödemek zorundadır. </p>
+                              <img src="img/portfolio/freelancer6.jpg" alt=""><br>
+                              <br><p>Freelance çalışanların, işlere karşılık verdikleri fiyatların vergiden ve KDV den bağımsız olduğunu belirterek iş almalıdırlar. Yani bir iş aldığınızda, aldığınız paranın vergisini, işini yaptığınız firma sizin adınıza vergi dairesini öder.Sözleşmelerinizde, bu durumu göz önüne alarak, verilen fiyatın vergi ve KDV içermediğini belirtmenizde, ileride oluşacak sorunları çözmek için gereklidir. Diğer bir kısıtlama ise, aynı firmaya, bir sene içinde toplam 30.000 TL üzerinde vergi kaydınız olmadan, iş yapamazsınız. Bir firmaya 30.000 üzerinde iş yapmışsanız veya yapıyosanız, vergi kaydınızın olması gerekir. Birden fazla firmaya, toplamda 50.000 TL kadar vergiden muaf iş yapabilirler.</p>
+                              <br>
+                              <img src="img/portfolio/Freelancer2.jpg" alt="">
+                              <p>Birazcıkta bu işin nası yürüdüğünden bahsedelim şimdi yazımın önce ki kısımlarında da bahsettiğim gibi iletişim kanalları bulunmakta bu iletişim kanalları yazılımcı ile proje sahibinin buluştukları ve karşılıklı ticaret yapıldığı ortamlardır,bu kanallarda iş karşılıklı al ver ile yürütülüyor.Proje sahibi   yapılmasını istediği işi kanala ppaylaşıyor ve projesini yapması için yazılımcı bekliyor.Developer ise kendi deneyim birikimine göre proje araştırıp ve proje sahipleri ile iletişime geçiyorlar,bu kısımı böyle gelelim bu kanallara yurt dışı kanalları da yurt içi kanalları bulunmakta , bu kanalların bazılarının üyelikleri ücretli bazılarınınsa ücretsiz oluyor bazılarının ise arkadaş davetiyesi üzerinden olmaktadır(r10.net gibi),ücretlilerin üyelik ücretleri değiişebiliyor 30$,40$ gibi fiyatları bulunuyor.</p>
+                              <br><p>Bu kanallardan bazılarının linkleri şunlar</p>
+                              <a  href="http://www.r10.net" >r10.net</a><br><br>
+                              <a href="http://www.freelancem.com">freelancem.com</a><br><br>
+                              <a href="http://www.projekurdu.com">projekurdu.com</a><br><br>
+                              <a href="https://www.freelancer.com	">freelancer.com</a><br><br>
+                              <a href="https://www.upwork.com">upwork.com</a><br><br>
+                              <a href="https://en.99designs.de">en.99designs.de</a><br><br>
+                            </div>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -428,11 +461,6 @@
                         <div class="modal-body">
                             <h2>Project Title</h2>
                             <hr class="star-primary">
-				<p>BRUTE FORCE:
- brute force nedir: brute force login sayfaların dasayfalarında user name ve password alanlarına kaba kuvvet saldırı yöntemiyle atack yapma yöntemidir. deneme yanılma yöntemiyle kırmaya
-yarayan saldırı tekniğidir .Bu yöntemde insanlar tek tek deneyerek yapmazlar bunun için yazılmış programlar var onları satın alabiliyolar yada kendileri yazıyolar.
-	brute forcede nasıl yapılır:ellimizde bulunan kelime listesiyle sürekli login sayfasına attack yapılır.asıl amaç özel kombinasyonlardan oluşturulmuş listedeki şifreleri
-tek tek deneyerek deneme yanılma yöntemiyle doğru şifre ulaşıp yönetimi ele geçirmektir.</p>
                             <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
