@@ -486,6 +486,18 @@
                         <div class="modal-body">
                             <h2>Project Title</h2>
                             <hr class="star-primary">
+                            <h4>MAC FLOODİNG(Adres taşması) </h4>
+                            <p>Konuya yavaştan başlamak gerekirse mac flooding ağı dinleme yöntemlerinden biridir.Ağda bir anahtarlayıcımız var ve bu anahtarlayıcının sahip olduğu mac adreslerinin tablosu bulunmaktadır.
+   Anahtarlayıcı dediğimiz olay ise Dağıtıcı yani bilgisayarların ve diğer ağ öğelerinin birbirlerine bağlanmasına sağlayan ağ donanımlarından biridir.Mac flooding atağın yapılabildiği bilinmesi gereken
+   iki tipi bulunur.Birincisi bilinmeyen unicast(noktadan noktaya yayın) taşması ikincisi mac tablolarında sınırlı sayıda mac adresi kapasitesi bulunmasıdır.
+   Bazı enternet anahtarı modelleri öğrenilen yeni mac adreslerini en eski mac adresinin üzerine yazarken bazı enternet anahtarları yeni mac adreslerini eklemek için eski mac adreslerinin yaşlanma sürelerinin
+   bitmesini beklerler.Bunlarda önemli bir nokta ise her iki tip enternet anahtarı tipinde de eğer enternet anahtarında ki mac tablosunda bulunmayan bir mac adresi paketi alınırsa alınan bu paket tüm portlardan 
+   gönderilir.Bilinmeyen unicast taşması oluşturur yani mac adres tablosunun taşması oluşur.Bu durumda bu paket tüm cihazlarda taranır bu sayede ağın hem hızını ve hemde performansını düşürür.Mac taablo taşması için 
+   enternet anahtar tablosunu bir portuna bağlı bir bilgisayar üzerinden mac adresini bir arttırarak paket yollamak yeterlidir.Macof ve ettercap linux üzerinde bu verilebilicek program örnekleridir.
+   Enternet anahtarında da bulunan mac tablosunun dolduğu için Enternet anahtarında bulunan bütün yerel ve sanal ağlara ait portlarda unicast taşması oluşur.Mac flooding attack da linux da bulunan wireshark 
+   programı ile ağı dinleme yapılabilinir.
+	Bu atağı önleme yöntemlerinden biri her port için IP-Mac adresi eşleştirmesi yapmak diğeri ise anahtar giriş yerine her birim sürede gelen arp istek miktarını sınırlandırmaktır eğer gereğinden fazla arp isteği
+   gönderidiğinde arp saldırısı olarak algılayıp bütün iletişimi durduracaktır buda tercih edilmeyen çözüm yöntemidir.</p>
                             <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
